@@ -1,0 +1,45 @@
+html, body, .grid-container { 
+    height: 100%; margin: 0; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "header header header header" 
+  "new-today total-recovered total-recovered deaths-today" 
+  "top-country top-country top-states top-states";
+}
+
+.total-recovered { grid-area: total-recovered; }
+
+.header { 
+    grid-area: header; }
+
+.new-today { 
+    grid-area: new-today; }
+
+.deaths-today { 
+    grid-area: deaths-today; }
+
+.top-country { 
+    grid-area: top-country; }
+
+.top-states { 
+    grid-area: top-states; }
+
+
+.grid-container * { 
+ border: 1px solid black;
+ position: relative;
+}
+
+.grid-container *:after { 
+ content:attr(class);
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+
