@@ -1,6 +1,10 @@
 html, body, .grid-container { 
     height: 100%; margin: 0; 
 }
+* {
+    justify-content: center;
+    font-family: 'Muli', sans-serif;
+}
 
 .grid-container {
   display: grid;
@@ -9,37 +13,81 @@ html, body, .grid-container {
   gap: 1px 1px;
   grid-template-areas: "header header header header" 
   "new-today total-recovered total-recovered deaths-today" 
-  "top-country top-country top-states top-states";
+  "top-country top-country total-cases total-cases";
+  border: 1px;
 }
 
-.total-recovered { grid-area: total-recovered; }
+.total-recovered { 
+    grid-area: total-recovered;
+    text-align: center;
+    background-color: #0284EF;
+    vertical-align: middle;
+    color: #524f49;
+}
+.total-recovered h2 {
+    font-size: 45px;
+}
 
 .header { 
-    grid-area: header; }
+    grid-area: header;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #71B5ED;
+    color: #524f49;
+    font-size: 40px;
+}
 
 .new-today { 
-    grid-area: new-today; }
+    grid-area: new-today;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #1D92F2;
+    color: #524f49;
+    font-size: 30px;
+}
 
 .deaths-today { 
-    grid-area: deaths-today; }
+    vertical-align: middle;
+    grid-area: deaths-today;
+    text-align: center;
+    background-color: #0B538E;
+    color: #b0aca5;
+    font-size: 30px;
+}
 
 .top-country { 
-    grid-area: top-country; }
+    grid-area: top-country;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #045BA3;
+    color: #b0aca5;
+    font-size: 35px;
+}
 
-.top-states { 
-    grid-area: top-states; }
-
-
+.total-cases { 
+    grid-area: total-cases;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #1D79C4;
+    color: #524f49;
+    font-size: 35px;
+}
+/* also, i'm not sure what i'm doing wrong?
+why are the section names showing on html? */
+/* can't get the little space between 
+each section to disappear. */
 .grid-container * { 
- border: 1px solid black;
- position: relative;
+    position: relative;
 }
 
 .grid-container *:after { 
- content:attr(class);
- position: absolute;
- top: 0;
- left: 0;
+    content:attr(class);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
+h2, h3, h4 {
+    border: 0px 0px 0px 0px;
+}
 
