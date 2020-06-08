@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:ital@0;1&display=swap');
+
 html, body, .grid-container { 
-    height: 100%; margin: 0; 
+    height: 100%; 
+    margin: 0; 
 }
 * {
-    justify-content: center;
     font-family: 'Muli', sans-serif;
 }
 
@@ -10,10 +12,9 @@ html, body, .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 1px 1px;
   grid-template-areas: "header header header header" 
   "new-today total-recovered total-recovered deaths-today" 
-  "top-country top-country total-cases total-cases";
+  "top-country top-country total-cases total-cases"; 
   border: 1px;
 }
 
@@ -23,9 +24,6 @@ html, body, .grid-container {
     background-color: #0284EF;
     vertical-align: middle;
     color: #524f49;
-}
-.total-recovered h2 {
-    font-size: 45px;
 }
 
 .header { 
@@ -72,22 +70,60 @@ html, body, .grid-container {
     color: #524f49;
     font-size: 35px;
 }
-/* also, i'm not sure what i'm doing wrong?
-why are the section names showing on html? */
-/* can't get the little space between 
-each section to disappear. */
+
 .grid-container * { 
     position: relative;
 }
 
-.grid-container *:after { 
-    content:attr(class);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 h2, h3, h4 {
-    border: 0px 0px 0px 0px;
+    border: 0px;
 }
 
+.header h5 {
+    margin-top: 0px;
+}
+
+a {
+    color: #0B538E;
+}
+
+a:hover {
+    color: rgb(4, 49, 87);
+}
+
+.total-recovered h2 {
+    font-size: 50px;
+}
+
+.total-recovered h3 {
+    font-size: 35px;
+}
+
+h3, h4 {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        "header" 
+        "new-today"
+        "total-recovered"
+        "deaths-today" 
+        "top-country" 
+        "total-cases"; 
+        border: 1px;
+    }
+    .header { 
+        grid-area: header;
+        text-align: center;
+        vertical-align: middle;
+        background-color: #71B5ED;
+        color: #524f49;
+        font-size: 30px;
+    }
+
+}

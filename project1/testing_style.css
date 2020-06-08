@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:ital@0;1&display=swap');
+
+* {
+    font-family: 'Muli', sans-serif;
+}
+
+html {
+    background-color: #71B5ED;
+}
+
+#map {
+    width: 100%;
+    height: 700px;
+    background-color: grey;
+}
+
+h2 {
+    text-align: center;
+    color: #524f49;
+}
